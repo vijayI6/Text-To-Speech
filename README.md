@@ -1,4 +1,4 @@
-Here’s a README template for a **Text to Speech Converter** similar to the one you mentioned:
+Here's the updated README file with the live demo link:
 
 ---
 
@@ -13,7 +13,7 @@ Text to Speech Converter is a web-based tool that allows users to input text and
 - [Technologies](#technologies)
 
 ## Demo
-You can view a live demo of the tool at voicesynthesis.netlify.app
+You can view a live demo of the tool at: [voicesynthesis.netlify.app](#voicesynthesis.netlify.app)
 
 ## Features
 - Real-time text to speech conversion
@@ -26,10 +26,15 @@ You can view a live demo of the tool at voicesynthesis.netlify.app
 1. Open the tool in your web browser.
 2. Type or paste the text you wish to convert into the input field.
 3. Select your preferred voice, adjust speed and pitch as desired.
-4. Click the "Listen" button to hear the text spoken aloud.
+4. Click the "Speak" button to hear the text spoken aloud.
 5. Optionally, use the "Copy Text" button to copy the input text to your clipboard.
 
 ## Technologies
 - HTML
 - CSS
 - JavaScript
+- Web Speech API (Text to Speech)
+
+---
+
+This version includes the demo link for easy access.
