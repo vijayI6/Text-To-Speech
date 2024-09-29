@@ -13,7 +13,7 @@ Text to Speech Converter is a web-based tool that allows users to input text and
 - [Technologies](#technologies)
 
 ## Demo
-You can view a live demo of the tool at: [voicesynthesis.netlify.app](voicesynthesis.netlify.app)
+You can view a live demo of the tool at
 
 ## Features
 - Real-time text to speech conversion
