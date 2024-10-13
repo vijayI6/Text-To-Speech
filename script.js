@@ -4,7 +4,13 @@ let voiceSelect = document.querySelector("select");
 
 window.speechSynthesis.onvoiceschanged = () => {
     voices = window.speechSynthesis.getVoices();
-    speech.voice = voices[0];
+
+    const defaultVoice = voices.find(voice => voice.name === "Google US English");
+    if (defaultVoice) {
+        speech.voice = defaultVoice;
+    } else {
+        speech.voice = voices[0];
+    }
 
     voices.forEach((voice, i) => {
         voiceSelect.options[i] = new Option(voice.name, i);
@@ -12,7 +18,7 @@ window.speechSynthesis.onvoiceschanged = () => {
 };
 
 voiceSelect.addEventListener("change", () => {
-    speech.voice = voices[voiceSelect.value]; 
+    speech.voice = voices[voiceSelect.value];
 });
 
 document.querySelector("button").addEventListener("click", () => {
