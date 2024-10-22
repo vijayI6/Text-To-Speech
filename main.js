@@ -3,25 +3,35 @@ let voices = [];
 let voiceSelect = document.querySelector("select");
 
 window.speechSynthesis.onvoiceschanged = () => {
-    voices = window.speechSynthesis.getVoices();
+    if (voices.length === 0) {
+        voices = window.speechSynthesis.getVoices();
 
-    const defaultVoice = voices.find(voice => voice.name === "Google US English");
-    if (defaultVoice) {
-        speech.voice = defaultVoice;
-    } else {
-        speech.voice = voices[0];
+        voiceSelect.innerHTML = '';
+        voices.forEach((voice, i) => {
+            let option = document.createElement("option");
+            option.value = i;
+            option.text = voice.name;
+            voiceSelect.appendChild(option);
+        });
+
+
+        let defaultVoiceIndex = voices.findIndex(voice => voice.name.includes("Google US English"));
+        if (defaultVoiceIndex !== -1) {
+            speech.voice = voices[defaultVoiceIndex];
+            voiceSelect.selectedIndex = defaultVoiceIndex;
+        } else {
+            speech.voice = voices[0];
+        }
     }
-
-    voices.forEach((voice, i) => {
-        voiceSelect.options[i] = new Option(voice.name, i);
-    });
 };
 
-voiceSelect.addEventListener("change", () => {
-    speech.voice = voices[voiceSelect.value];
-});
-
 document.querySelector("button").addEventListener("click", () => {
-    speech.text = document.querySelector("textarea").value;
-    window.speechSynthesis.speak(speech);
+
+    if (voices.length > 0) {
+        speech.text = document.querySelector("textarea").value;
+        speech.voice = voices[voiceSelect.value];
+        window.speechSynthesis.speak(speech);
+    } else {
+        console.error("Voices are still loading, please try again.");
+    }
 });
