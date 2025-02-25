@@ -7,7 +7,6 @@ let currentText = "";
 let sentences = [];
 let currentSentenceIndex = 0;
 
-// Load voices and select "Google US English"
 function populateVoices() {
     voices = window.speechSynthesis.getVoices();
     if (voices.length === 0) return;
@@ -16,45 +15,43 @@ function populateVoices() {
     speech.voice = defaultVoice;
 }
 
-// Ensure voices are loaded
-window.speechSynthesis.onvoiceschanged = populateVoices;
-if (window.speechSynthesis.getVoices().length > 0) {
-    populateVoices();
-}
 
-// Function to start speech from a given sentence
+populateVoices();
+window.speechSynthesis.onvoiceschanged = populateVoices;
+
 function speakSentence(index = 0) {
     if (voices.length === 0 || index >= sentences.length) return;
 
-    window.speechSynthesis.cancel(); // Stop any ongoing speech
+    window.speechSynthesis.cancel();
 
     speech.text = sentences[index];
     speech.rate = parseFloat(speedRange.value);
-    
-    speech.onboundary = () => {
-        currentSentenceIndex = index;
-    };
 
     speech.onend = () => {
-        if (currentSentenceIndex + 1 < sentences.length) {
-            speakSentence(currentSentenceIndex + 1); // Speak next sentence
+        if (index + 1 < sentences.length) {
+            currentSentenceIndex = index + 1;
+            isSpeaking = true;
+            setTimeout(() => {
+                window.speechSynthesis.resume();
+                speakSentence(currentSentenceIndex);
+            }, 50);
         } else {
             isSpeaking = false;
-            currentSentenceIndex = 0;
         }
     };
 
+    currentSentenceIndex = index;
     isSpeaking = true;
     window.speechSynthesis.speak(speech);
 }
 
-// Handle speed change dynamically
 speedRange.addEventListener("input", () => {
     let speed = parseFloat(speedRange.value);
     speedValue.textContent = speed + "x";
 
     if (isSpeaking) {
-        speakSentence(currentSentenceIndex); // Restart from the last spoken sentence
+        window.speechSynthesis.cancel();
+        speakSentence(currentSentenceIndex);
     } else {
         speech.rate = speed;
     }
