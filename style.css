@@ -61,7 +61,7 @@ button {
     background: #ff2963;
     color: #fff;
     font-size: 16px;
-    margin-top: 10px;
+    margin-top: 15px;
     padding: 10px 30px;
     border-radius: 35px;
     border: 0;
@@ -82,8 +82,8 @@ button:hover {
 
 .copyright {
     margin-top: 50px;
-    font-size: 19px;
-    color: #c4c4c4;
+    font-size: 21px;
+    color: aliceblue;
     text-align: center;
 }
 
@@ -189,7 +189,7 @@ button:hover {
     }
 
     .copyright {
-        font-size: 15px;
+        font-size: 18px;
     }
 }
 
@@ -224,6 +224,6 @@ button:hover {
     }
 
     .copyright {
-        font-size: 13px;
+        font-size: 17px;
     }
 }
