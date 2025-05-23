@@ -24,7 +24,8 @@ h1 {
 }
 
 .main h1 span {
-    color: #ff2963;
+    color: #ff2963;  
+    font-weight: 520;
 }
 
 textarea {
@@ -32,7 +33,7 @@ textarea {
     height: 350px;
     background: #403d84;
     color: #fff;
-    font-size: 20px;
+    font-size: 30px;
     border: 0;
     outline: 0;
     border-radius: 20px;
@@ -51,7 +52,7 @@ textarea::placeholder {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-bottom: 30px;
+    padding-bottom: 40px;
     gap: 20px;
 }
 
@@ -60,6 +61,7 @@ button {
     background: #ff2963;
     color: #fff;
     font-size: 16px;
+    margin-top: 10px;
     padding: 10px 30px;
     border-radius: 35px;
     border: 0;
@@ -79,8 +81,8 @@ button:hover {
 }
 
 .copyright {
-    margin-top: 20px;
-    font-size: 18px;
+    margin-top: 50px;
+    font-size: 20px;
     color: #c4c4c4;
     text-align: center;
 }
@@ -106,7 +108,7 @@ button:hover {
 
     button {
         font-size: 18px;
-        height: 55px;
+        height: 50px;
     }
 
     button:hover {
@@ -178,7 +180,7 @@ button:hover {
     }
 
     button:hover {
-        background-color: rgb(22, 192, 22);
+        background-color: rgb(25, 126, 25);
         transition: background-color 0.15s ease;
     }
 
