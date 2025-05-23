@@ -82,14 +82,14 @@ button:hover {
 
 .copyright {
     margin-top: 50px;
-    font-size: 20px;
+    font-size: 19px;
     color: #c4c4c4;
     text-align: center;
 }
 
-/* Media Queries for Responsive Design */
 
-/* Desktops */
+
+/* Media Queries for Desktops */
 @media (min-width: 1200px) {
     textarea {
         width: 800px;
@@ -108,7 +108,7 @@ button:hover {
 
     button {
         font-size: 18px;
-        height: 50px;
+        height: 45px;
     }
 
     button:hover {
@@ -118,7 +118,7 @@ button:hover {
     }
 }
 
-/* Tablet*/
+/* Media Queries for Tablet*/
 @media (min-width: 768px) and (max-width: 1199px) {
     textarea {
         width: 90%;
@@ -140,7 +140,7 @@ button:hover {
 
     button {
         font-size: 16px;
-        height: 50px;
+        height: 40px;
     }
 
     button:hover {
@@ -154,7 +154,7 @@ button:hover {
 
 }
 
-/* Mobile Device */
+/* Media Queries for Mobile Device */
 @media (max-width: 767px) {
     textarea {
         width: 95%;
