@@ -29,8 +29,8 @@ h1 {
 }
 
 textarea {
-    width: 700px;
-    height: 350px;
+    width: 750px;
+    height: 400px;
     background: #403d84;
     color: #fff;
     font-size: 30px;
@@ -62,7 +62,7 @@ button {
     color: #fff;
     font-size: 16px;
     margin-top: 15px;
-    padding: 10px 30px;
+    padding: 13px 20px;
     border-radius: 35px;
     border: 0;
     outline: 0;
@@ -78,6 +78,7 @@ button img {
 
 button:hover {
     background-color: rgb(22, 192, 22);
+    color: black;
 }
 
 .copyright {
@@ -88,35 +89,6 @@ button:hover {
 }
 
 
-
-/* Media Queries for Desktops */
-@media (min-width: 1200px) {
-    textarea {
-        width: 800px;
-        height: 400px;
-        font-size: 22px;
-    }
-
-    .row {
-        width: 700px;
-        padding-bottom: 20px;
-    }
-
-    h1 {
-        font-size: 55px;
-    }
-
-    button {
-        font-size: 18px;
-        height: 45px;
-    }
-
-    button:hover {
-        background-color: rgb(22, 192, 22);
-        transition: background-color 0.15s ease;
-        scroll-behavior: smooth;
-    }
-}
 
 /* Media Queries for Tablet*/
 @media (min-width: 768px) and (max-width: 1199px) {
